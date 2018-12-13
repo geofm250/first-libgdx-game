@@ -1,56 +1,22 @@
 package za.co.geoffrey.combat;
 
+import cucumber.api.CucumberOptions;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+import cucumber.api.junit.Cucumber;
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty"}, features = "classpath:PlayerMonsterCombat.feature")
 public class PlayerMonsterCombatTests {
-    @Test
-    public void playerAttacksMonster() {
-        final Player player = Player
-                .builder()
-                .attack(50)
-                .defense(20)
-                .name("John")
-                .hitPoints(200)
-                .build();
-        final Monster monster = Monster
-                .builder()
-                .attack(50)
-                .defense(20)
-                .name("Wild Boar")
-                .hitPoints(200)
-                .build();
 
-        final int expectedHitPoints = monster.getHitPoints() - (player.getAttack() - monster.getDefense());
-        System.out.println("Attacking monster");
-        player.attack(monster);
-        assertThat(monster.getHitPoints(), is(equalTo(expectedHitPoints)));
-    }
-
-    @Test
-    public void monsterCanBeKiller() {
-        final Player player = Player
-                .builder()
-                .attack(50)
-                .defense(20)
-                .name("John")
-                .hitPoints(200)
-                .build();
-        final Monster monster = Monster
-                .builder()
-                .attack(50)
-                .defense(20)
-                .name("Wild Boar")
-                .hitPoints(200)
-                .build();
-
-        for (int i = 0; i < 8; i++) {
-            player.attack(monster);
-        }
-        assertThat(monster.isDead(),is(equalTo(true)));
-        assertThat(monster.isAlive(),is(equalTo(false)));
-    }
 }

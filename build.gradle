@@ -100,6 +100,21 @@ project(":combat") {
     apply plugin: "java"
     apply plugin: "net.ltgt.apt"
 
+    configurations {
+        cucumberRuntime {
+            extendsFrom testRuntime
+        }
+    }
+    task cucumber() {
+        dependsOn assemble, compileTestJava
+        doLast {
+            javaexec {
+                main = "cucumber.api.cli.Main"
+                classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+                args = ['--plugin', 'pretty', '--glue', 'gradle.cucumber', 'src/test/resources']
+            }
+        }
+    }
     dependencies {
         compileOnly "org.projectlombok:lombok:$lombokVersion"
         apt "org.projectlombok:lombok:$lombokVersion"
@@ -108,6 +123,8 @@ project(":combat") {
         compile "com.google.dagger:dagger:$daggerVersion"
         apt "com.google.dagger:dagger-compiler:$daggerVersion"
         testImplementation "org.hamcrest:hamcrest-library:$hamcrestVersion"
+        testCompile 'io.cucumber:cucumber-java:4.2.0'
+        testCompile 'io.cucumber:cucumber-junit:4.2.0'
     }
 }
 //tasks.eclipse.doLast {
