@@ -12,8 +12,20 @@ public class Monster {
     private int defense;
     @Getter
     private int hitPoints;
+    private boolean isDead;
 
     public void defend(final Player player) {
-        this.hitPoints = this.hitPoints - (player.getAttack() - this.defense);
+        if (this.isAlive()) {
+            this.hitPoints = this.hitPoints - (player.getAttack() - this.defense);
+            this.isDead = hitPoints <= 0;
+        }
+    }
+
+    public boolean isDead() {
+        return isDead;
+    }
+
+    public boolean isAlive() {
+        return !isDead;
     }
 }

@@ -29,4 +29,28 @@ public class PlayerMonsterCombatTests {
         player.attack(monster);
         assertThat(monster.getHitPoints(), is(equalTo(expectedHitPoints)));
     }
+
+    @Test
+    public void monsterCanBeKiller() {
+        final Player player = Player
+                .builder()
+                .attack(50)
+                .defense(20)
+                .name("John")
+                .hitPoints(200)
+                .build();
+        final Monster monster = Monster
+                .builder()
+                .attack(50)
+                .defense(20)
+                .name("Wild Boar")
+                .hitPoints(200)
+                .build();
+
+        for (int i = 0; i < 8; i++) {
+            player.attack(monster);
+        }
+        assertThat(monster.isDead(),is(equalTo(true)));
+        assertThat(monster.isAlive(),is(equalTo(false)));
+    }
 }
