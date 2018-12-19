@@ -6,6 +6,7 @@ import lombok.Getter;
 
 @Builder
 public class Monster {
+    @Getter
     private String name;
     private int attack;
     @Getter

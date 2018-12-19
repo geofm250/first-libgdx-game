@@ -94,6 +94,7 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
         compile "com.google.dagger:dagger:$daggerVersion"
         apt "com.google.dagger:dagger-compiler:$daggerVersion"
+        compile project(":combat")
     }
 }
 project(":combat") {

@@ -7,10 +7,12 @@ import lombok.Getter;
 
 @Builder
 public class Player {
+    @Getter
     private String name;
     @Getter
     private int attack;
     private int defense;
+    @Getter
     private int hitPoints;
 
     public void attack(final Monster monster) {
