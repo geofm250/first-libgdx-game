@@ -95,6 +95,8 @@ project(":core") {
         compile "com.google.dagger:dagger:$daggerVersion"
         apt "com.google.dagger:dagger-compiler:$daggerVersion"
         compile project(":combat")
+        compileOnly "org.projectlombok:lombok:$lombokVersion"
+        apt "org.projectlombok:lombok:$lombokVersion"
     }
 }
 project(":combat") {

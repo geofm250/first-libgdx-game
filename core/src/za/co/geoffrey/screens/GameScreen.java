@@ -2,17 +2,21 @@ package za.co.geoffrey.screens;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import za.co.geoffrey.FirstGame;
 import za.co.geoffrey.combat.Monster;
 import za.co.geoffrey.combat.Player;
 import za.co.geoffrey.sprites.PlayerSprite;
 
 public class GameScreen implements Screen {
+    private static final String TAG = GameScreen.class.getSimpleName();
+
     private FirstGame firstGame;
 
     private Monster monster;
     private PlayerSprite playerSprite;
     private SpriteBatch batch;
+    private TextureAtlas playerAtlas;
 
     public GameScreen(FirstGame firstGame) {
         this.firstGame = firstGame;
@@ -21,7 +25,8 @@ public class GameScreen implements Screen {
     @Override
     public void show() {
         batch = firstGame.getBatch();
-        this.playerSprite = new PlayerSprite(batch);
+        playerAtlas = new TextureAtlas("player/actor-1.txt");
+        this.playerSprite = new PlayerSprite(batch, playerAtlas);
         this.playerSprite.show();
         this.monster = Monster.builder()
                 .name("Wild Boar")
@@ -61,5 +66,6 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
         playerSprite.dispose();
+        playerAtlas.dispose();
     }
 }
