@@ -1,0 +1,89 @@
+actor-1.png
+size: 246, 95
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back-both
+  rotate: false
+  xy: 1, 1
+  size: 39, 46
+  orig: 48, 48
+  offset: 4, 0
+  index: -1
+back-right
+  rotate: false
+  xy: 85, 49
+  size: 39, 45
+  orig: 48, 48
+  offset: 4, 0
+  index: -1
+both-left
+  rotate: false
+  xy: 126, 49
+  size: 39, 45
+  orig: 48, 48
+  offset: 4, 0
+  index: -1
+forward-both
+  rotate: false
+  xy: 42, 1
+  size: 39, 46
+  orig: 48, 48
+  offset: 4, 0
+  index: -1
+forward-left
+  rotate: false
+  xy: 165, 1
+  size: 39, 45
+  orig: 48, 48
+  offset: 4, 0
+  index: -1
+forward-right
+  rotate: false
+  xy: 206, 1
+  size: 39, 45
+  orig: 48, 48
+  offset: 4, 0
+  index: -1
+left-both
+  rotate: false
+  xy: 83, 1
+  size: 39, 46
+  orig: 48, 48
+  offset: 5, 0
+  index: -1
+left-left
+  rotate: false
+  xy: 167, 48
+  size: 38, 45
+  orig: 48, 48
+  offset: 6, 0
+  index: -1
+left-right
+  rotate: false
+  xy: 1, 49
+  size: 40, 45
+  orig: 48, 48
+  offset: 4, 0
+  index: -1
+right-both
+  rotate: false
+  xy: 124, 1
+  size: 39, 46
+  orig: 48, 48
+  offset: 3, 0
+  index: -1
+right-left
+  rotate: false
+  xy: 43, 49
+  size: 40, 45
+  orig: 48, 48
+  offset: 3, 0
+  index: -1
+right-right
+  rotate: false
+  xy: 207, 48
+  size: 38, 45
+  orig: 48, 48
+  offset: 3, 0
+  index: -1
