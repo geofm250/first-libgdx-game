@@ -1,16 +1,18 @@
 package za.co.geoffrey.screens;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import za.co.geoffrey.FirstGame;
 import za.co.geoffrey.combat.Monster;
 import za.co.geoffrey.combat.Player;
 import za.co.geoffrey.sprites.PlayerSprite;
 
 public class GameScreen implements Screen {
-    private static final String TAG = GameScreen.class.getSimpleName();
-
     private FirstGame firstGame;
 
     private Monster monster;

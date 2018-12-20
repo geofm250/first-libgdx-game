@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import za.co.geoffrey.screens.GameScreen;
+import za.co.geoffrey.screens.MainGameScreen;
 
 import javax.inject.Inject;
 
@@ -12,6 +13,7 @@ import javax.inject.Inject;
 public class FirstGame extends Game {
 
     private final MessageService messageService;
+    public static final MainGameScreen _mainGameScreen = new MainGameScreen();
 
     private SpriteBatch spriteBatch;
 
@@ -22,8 +24,9 @@ public class FirstGame extends Game {
 
     @Override
     public void create() {
-        spriteBatch = new SpriteBatch();
-        setScreen(new GameScreen(this));
+//        spriteBatch = new SpriteBatch();
+//        setScreen(new GameScreen(this));
+        setScreen(_mainGameScreen);
     }
 
 
@@ -40,8 +43,9 @@ public class FirstGame extends Game {
 
     @Override
     public void dispose() {
-        super.dispose();
-        spriteBatch.dispose();
+//        super.dispose();
+//        spriteBatch.dispose();
+        _mainGameScreen.dispose();
     }
 
     public SpriteBatch getBatch() {
